@@ -9,7 +9,6 @@ while end != "":
     if end == start:
         answer = 1
         break
-
     if end.endswith("A"):
         end = end[:-1]
     else:

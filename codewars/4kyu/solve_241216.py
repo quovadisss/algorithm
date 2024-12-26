@@ -4,7 +4,6 @@ In this kata, your task is to create all permutations of a non-empty input strin
 Create as many "shufflings" as you can!
 
 Examples:
-
 With input 'a':
 Your function should return: ['a']
 

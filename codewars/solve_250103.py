@@ -10,25 +10,21 @@ Examples
 -37 -> (3, 4)   # 3^3 - 4^3 = -37
 217 -> (9, 8)   # 9^3 - 8^3 = 217
 """
-def find_cube_pairs(n):
-    if abs(n) > 2**64:
-        return None
-    
+def cubes(n: int) -> tuple[int, int] | None:
     if n == 0:
         return (0, 0)
     
-    is_negative = n < 0
-    n = abs(n)
-    
-    limit = int(pow(n, 1/3)) + 2
-    
-    for a in range(-limit, limit + 1):
-        for b in range(-limit, limit + 1):
-            if a**3 - b**3 == n:
-                return (a, b) if not is_negative else (b, a)
-            elif b**3 - a**3 == n:
-                return (b, a) if not is_negative else (a, b)
-    
+    limit = int(pow(n, 1/3)) + 3
+
+    for a in range(-limit, limit):
+        b = -n + (a**3)
+        print(b)
+        pow_b = -pow(abs(b), 1/3) if b < 0 else pow(b, 1/3)
+        print(a, pow_b)
+
+        if type(pow_b) == float and int(pow_b) == pow_b:
+            return (a, int(pow_b))
+
     return None
 
-print(find_cube_pairs(1729))
+print(cubes(7110))

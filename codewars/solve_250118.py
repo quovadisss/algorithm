@@ -36,6 +36,6 @@ def shorten_number(suffixes, base):
         elif type(object) != str:
             return str(object)
         else:
-            return None
+            return object
         
     return main
